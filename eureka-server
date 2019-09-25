@@ -1,0 +1,15 @@
+server:
+  port: 8081
+eureka:
+  server:
+    enable-self-preservation: false
+  instance:
+    hostname: localhost   # 必须写服务名,不能写ip
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/  #互相注册,如果有三个,则写其他两个地址
+    fetch-registry: false # 获取注册信息
+    register-with-eureka: false #注册信息到eureka
+spring:
+  application:
+    name: eureka-server
